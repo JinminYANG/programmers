@@ -13,7 +13,9 @@ function solution(s) {
                 answer += str_sp[k].charAt(j).toLowerCase();
             }
         }
-        answer += " ";
+        if(k!==str_sp.length-1){
+            answer += " ";
+        }
     }
 
     console.log(answer);
