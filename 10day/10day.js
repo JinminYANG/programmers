@@ -1,11 +1,11 @@
 function solution(n, lost, reserve) {
-    let stu = [];
+    let stu = []; // 학생 배열 선언
     let index = 0;
 
-    for (let i = 1; i <= n; i++) {
-        stu[index++] = i;
+    for (let i = 1; i <= n; i++) { // 학생 배열에 넣을 반복문 
+        stu[index++] = i; // 학생 배열에 삽입
     }
-    console.log(stu);
+    console.log(stu); // 출력
 
     for (let i = 0; i < stu.length; i++) {
         for (let k = lost.length - 1; k >= 0; k--) {
@@ -22,14 +22,14 @@ function solution(n, lost, reserve) {
     index = 0;
     for (let i = 0; i < stu.length; i++) {
         if (stu[i] == null) {
+            // if (stu[i - 1] === reserve[i-1] || stu[i + 1] === reserve[i-1]) {
+            //     stu[i] = reserve[i];
+            // }
             index = i+1;
             console.log(index);
         }
 
-        // !!!!! reserve 부분 풀어야함!!!!!
-        // if (stu[i - 1] === reserve[i-1] || stu[i + 1] === reserve[i-1]) {
-        //     stu[i] = reserve[i];
-        // }
+
     }
     console.log(stu);
 
