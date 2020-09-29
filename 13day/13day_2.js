@@ -1,4 +1,4 @@
-function solution(s, n) {
+function solution(s, n) {  // 오류
     let str = [];
     let rtn = '';
     for (let i = 0; i < s.length; i++) {
