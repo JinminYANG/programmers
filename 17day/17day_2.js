@@ -1,3 +1,5 @@
+// lv.1 - 크레인 인형뽑기 게임
+
 function solution(board, moves) {
     let rtn = 0;
     let arr = [];
