@@ -1,4 +1,4 @@
-// lv.1 - 키패드 누르기 (작성중)
+// lv.1 - 키패드 누르기 (성공!)
 
 function solution(numbers, hand) {
     let rtn = '';
@@ -9,12 +9,11 @@ function solution(numbers, hand) {
     let rightIndex = [[3], [2]];
     let centerIndex;
 
-    // console.log(leftIndex);
-
     function findNumber(numb) {
         for (let i = 0; i < keypad.length; i++) {
             for (let k = 0; k < keypad[0].length; k++) {
                 if (keypad[i][k] === numb) {
+                    // console.log([[i], [k]]);
                     return [[i], [k]];
                 }
             }
@@ -43,17 +42,33 @@ function solution(numbers, hand) {
             rtn += "R";
         } else {
             centerIndex = findNumber(numbers[i]);
-            console.log(leftIndex - centerIndex);
+
+            let leftCompare = Math.abs(centerIndex[0] - leftIndex[0]) + Math.abs(centerIndex[1] - leftIndex[1]);
+            let rightCompare = Math.abs(centerIndex[0] - rightIndex[0]) + Math.abs(centerIndex[1] - rightIndex[1]);
+
+            if (leftCompare > rightCompare) {
+                rtn += "R";
+                rightIndex = centerIndex;
+            } else if (leftCompare < rightCompare) {
+                rtn += "L";
+                leftIndex = centerIndex;
+            } else if (leftCompare === rightCompare) {
+                if (hand === 'right') {
+                    rtn += "R";
+                    rightIndex = centerIndex;
+                } else if( hand === 'left'){
+                    rtn += "L"
+                    leftIndex = centerIndex;
+                }
+            }
         }
     }
 
-
-    // for (let k = 0; k < keypad.length; k++) {
-    //     for (let j = 0; j < keypad[0].length; j++) {
-    //
-    //     }
-    // }
+    console.log(rtn);
+    return rtn;
 
 }
 
-solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right");
+// solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right");
+
+solution([7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2], "left");
