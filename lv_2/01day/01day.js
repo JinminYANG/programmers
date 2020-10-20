@@ -1,4 +1,4 @@
-// lv.2 - 기능개발
+// lv.2 - 기능개발 (실패)
 
 function solution(progresses, speeds) {
     let rtn = [];

@@ -1,4 +1,4 @@
-// lv.2 - 기능개발
+// lv.2 - 기능개발 (성공)
 
 function solution(progresses, speeds) {
     let rtn = [];   // 몇개의 기능이 배포되는지 리턴할 배열
